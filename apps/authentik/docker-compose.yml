@@ -55,7 +55,7 @@ services:
     restart: unless-stopped
     command: worker
     environment:
-      - AUTHENTIK_REDIS__HOST: redis
+      - AUTHENTIK_REDIS__HOST=redis
       - AUTHENTIK_POSTGRESQL__HOST=postgresql
       - AUTHENTIK_POSTGRESQL__USER=authentik
       - AUTHENTIK_POSTGRESQL__NAME=authentik
