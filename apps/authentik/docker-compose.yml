@@ -11,15 +11,15 @@ services:
       - POSTGRES_USER=authentik
       - POSTGRES_DB=authentik
     networks:
-			- tipi_main_network
-			
+      - tipi_main_network
+      
   redis:
     image: redis:alpine
     command: --save 60 1 --loglevel warning
     restart: unless-stopped
     volumes:
       - ${APP_DATA_DIR}/data/redis:/data
-		networks:
+    networks:
       - tipi_main_network
       
   authentik:
@@ -40,7 +40,7 @@ services:
     ports:
       - ${APP_PORT}:9000
     # - "${COMPOSE_PORT_HTTPS:-9443}:9443"
-		networks:
+    networks:
       - tipi_main_network
     labels:
       traefik.enable: ${APP_EXPOSED}
@@ -60,14 +60,14 @@ services:
       - AUTHENTIK_POSTGRESQL__USER=authentik
       - AUTHENTIK_POSTGRESQL__NAME=authentik
       - AUTHENTIK_POSTGRESQL__PASSWORD=${POSTGRES_PASSWORD}
-			- AUTHENTIK_SECRET_KEY=${AUTHENTIK_SECRET_KEY}
+      - AUTHENTIK_SECRET_KEY=${AUTHENTIK_SECRET_KEY}
     # `user: root` and the docker socket volume are optional.
     # See more for the docker socket integration here:
     # https://goauthentik.io/docs/outposts/integrations/docker
     # Removing `user: root` also prevents the worker from fixing the permissions
     # on the mounted folders, so when removing this make sure the folders have the correct UID/GID
     # (1000:1000 by default)
-		networks:
+    networks:
       - tipi_main_network
     user: root
     volumes:
