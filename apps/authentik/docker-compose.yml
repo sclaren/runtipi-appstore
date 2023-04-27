@@ -40,7 +40,7 @@ services:
       traefik.enable: ${APP_EXPOSED}
       traefik.http.routers.authentik.rule: Host(`${APP_DOMAIN}`)
       traefik.http.routers.authentik.entrypoints: websecure
-      traefik.http.routers.authentik.service: actual-budget
+      traefik.http.routers.authentik.service: authentik
       traefik.http.routers.authentik.tls.certresolver: myresolver
       traefik.http.services.authentik.loadbalancer.server.port: 9000
       
