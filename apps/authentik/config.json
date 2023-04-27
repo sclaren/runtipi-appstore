@@ -16,10 +16,9 @@
   "source": "https://github.com/crccheck/docker-hello-world",
  "form_fields": [
      {
-       "type": "text",
-       "label": "Secret Key (min 40 characters)",
+       "type": "random",
+       "label": "Secret Key",
        "required": true,
-       "min": 40,
        "env_variable": "AUTHENTIK_SECRET_KEY"
      },
      {
