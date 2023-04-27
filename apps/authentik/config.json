@@ -18,7 +18,6 @@
      {
        "type": "random",
        "label": "Secret Key",
-       "required": true,
        "env_variable": "AUTHENTIK_SECRET_KEY"
      },
      {
