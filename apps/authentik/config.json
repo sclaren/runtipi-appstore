@@ -1,0 +1,32 @@
+{
+  "$schema": "../schema.json",
+  "name": "Authentik",
+  "available": true,
+  "exposable": true,
+  "port": 8014,
+  "id": "authentic",
+  "tipi_version": 1,
+  "version": "2023.4.1",
+  "categories": [
+    "utilities"
+  ],
+  "description": "With authentik, site administrators, application developers, and security engineers a dependable and secure solution for authentication in almost any type of environment",
+  "short_desc": "authentik is an open-source Identity Provider, focused on flexibility and versatility.",
+  "author": "crccheck",
+  "source": "https://github.com/crccheck/docker-hello-world",
+ "form_fields": [
+     {
+       "type": "text",
+       "label": "Secret Key (min 40 characters)",
+       "required": true,
+       "min": 40,
+       "env_variable": "AUTHENTIK_SECRET_KEY"
+     },
+     {
+        "type": "password",
+        "label": "Database Password",
+        "required": true,
+        "env_variable": "POSTGRES_PASSWORD"
+      }
+   ]
+}
