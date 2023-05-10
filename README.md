@@ -20,10 +20,12 @@ This is the official repository for the Tipi App Store. It contains all the apps
 - [Deluge](https://github.com/linuxserver/docker-deluge) - Deluge is a lightweight, Free Software, cross-platform BitTorrent client
 - [Deemix](https://gitlab.com/Bockiii/deemix-docker) - deemix is a barebone deezer downloader library built from the ashes of Deezloader Remix.
 - [DokuWiki](https://github.com/dokuwiki/dokuwiki) - DokuWiki is a simple to use and highly versatile Open Source wiki software
+- [Dozzle](https://github.com/amir20/dozzle) - Dozzle is a small web based app to monitor Docker logs
 - [Duplicati](https://github.com/linuxserver/docker-duplicati) - Store securely encrypted backups in the cloud!
 - [Emulatorjs](https://github.com/EmulatorJS/EmulatorJS) - Self-hosted Javascript emulation for various system.
 - [Excalidraw](https://github.com/excalidraw/excalidraw) - Online whiteboard collaboration made easy
 - [Filebrowser](https://github.com/filebrowser/filebrowser) - Web File Browser
+- [Filestash](https://github.com/mickael-kerjean/filestash) - A modern web client for SFTP, S3, FTP, WebDAV, Git, Minio, LDAP, CalDAV, CardDAV, Mysql, Backblaze
 - [Firefly III](https://github.com/firefly-iii/firefly-iii) - A personal finances manager
 - [Fireshare](https://github.com/ShaneIsrael/fireshare) - Self host your media and share with unique links
 - [Flatnotes](https://github.com/Dullage/flatnotes) - A self-hosted, database-less note taking web app
@@ -88,6 +90,7 @@ This is the official repository for the Tipi App Store. It contains all the apps
 - [Peppermint](https://github.com/Peppermint-Lab/peppermint) - An open source ticket management & help desk solution.
 - [Photoprism](https://github.com/photoprism/photoprism) - AI-Powered Photos App for the Decentralized Web. We are on a mission to protect your freedom and privacy.
 - [Pihole](https://github.com/pi-hole/pi-hole) - A black hole for Internet advertisements
+- [Plausible](https://github.com/plausible/analytics) - Simple, open-source, lightweight (< 1 KB) and privacy-friendly web analytics alternative to Google Analytics.
 - [Plex](https://github.com/plexinc/pms-docker) - Stream Movies & TV Shows
 - [PodFetch](https://github.com/SamTV12345/PodFetch) - A sleek and efficient podcast downloader.
 - [Portainer](https://github.com/portainer/portainer) - Making Docker and Kubernetes management easy.
