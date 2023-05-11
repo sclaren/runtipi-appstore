@@ -55,14 +55,14 @@
       "type": "boolean",
       "label": "Allow User registration",
       "required": false,
-      "hint": "Allow any user to create an account",
+      "hint": "Allow any user to register an account",
       "env_variable": "WALLABAG_FOSUSER_REGISTRATION"
     },
     {
       "type": "boolean",
-      "label": "User Confirmation iirequired",
+      "label": "User Confirmation required",
       "required": false,
-      "hint": "New users must confirm the creation of their accounts. Needs eMail to be able to send out.",
+      "hint": "New users must confirm the creation of their accounts.",
       "env_variable": "WALLABAG_FOSUSER_CONFIRMATION"
     }
   ]
