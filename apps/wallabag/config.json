@@ -1,0 +1,69 @@
+{
+  "$schema": "../schema.json",
+  "name": "wallabag",
+  "available": true,
+  "exposable": true,
+  "port": 8014,
+  "id": "wallabag",
+  "tipi_version": 1,
+  "version": "2.5.4",
+  "categories": [
+    "utilities",
+    "data"
+  ],
+  "supported_architectures": [
+    "amd64",
+    "arm/v7",
+    "arm64"
+  ],
+  "description": "wallabag is a web application allowing you to save web pages for later reading. Click, save and read it when you want. It extracts content so that you won't be distracted by pop-ups and cie.",
+  "short_desc": "wallabag is self hosted read later app",
+  "author": "Nicolas Lœuillet",
+  "source": "https://github.com/wallabag/wallabag",
+  "form_fields": [
+    {
+      "type": "text",
+      "label": "Instance Name",
+      "required": true,
+      "hint": "Give your Wallabag instance a name",
+      "env_variable": "WALLABAG_INSTANCE_NAME"
+    },
+    {
+      "type": "text",
+      "label": "Database Username",
+      "required": true,
+      "hint": "Username for the Wallabag Database User",
+      "env_variable": "WALLABAG_DB_USER"
+    },
+    {
+      "type": "password",
+      "label": "Database Password",
+      "required": true,
+      "min": 5,
+      "hint": "Password for the Wallabag Database User",
+      "env_variable": "WALLABAG_DB_PASSWORD"
+    },
+    {
+      "type": "password",
+      "label": "Database ROOT Password",
+      "required": true,
+      "min": 5,
+      "hint": "ROOT Password for the Wallabag Database ROOT User",
+      "env_variable": "WALLABAG_DB_PASSWORD_ROOT"
+    },
+    {
+      "type": "boolean",
+      "label": "Allow User registration",
+      "required": false,
+      "hint": "Allow any user to create an account",
+      "env_variable": "WALLABAG_FOSUSER_REGISTRATION"
+    },
+    {
+      "type": "boolean",
+      "label": "User Confirmation required",
+      "required": false,
+      "hint": "New users must confirm the creation of their accounts. Needs eMail to be able to send out.",
+      "env_variable": "WALLABAG_FOSUSER_CONFIRMATION"
+    }
+  ]
+}

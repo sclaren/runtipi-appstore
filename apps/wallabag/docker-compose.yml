@@ -1,0 +1,59 @@
+version: '3'
+services:
+  wallabag:
+    image: wallabag/wallabag:2.5.4
+    environment:
+      - MYSQL_ROOT_PASSWORD=wallaroot
+      - SYMFONY__ENV__DATABASE_DRIVER=pdo_mysql
+      - SYMFONY__ENV__DATABASE_HOST=db
+      - SYMFONY__ENV__DATABASE_PORT=3306
+      - SYMFONY__ENV__DATABASE_NAME=wallabag
+      - SYMFONY__ENV__DATABASE_USER=${WALLABAG_DB_USER}
+      - SYMFONY__ENV__DATABASE_PASSWORD=${WALLABAG_DB_PASSWORD}
+      - SYMFONY__ENV__DATABASE_CHARSET=utf8mb4
+      - SYMFONY__ENV__DOMAIN_NAME=${APP_PROTOCOL:-http}://${APP_DOMAIN}
+      - SYMFONY__ENV__SERVER_NAME="${WALLABAG_INSTANCE_NAME}"
+      - SYMFONY__ENV__FOSUSER_REGISTRATION=${WALLABAG_FOSUSER_REGISTRATION}
+      - SYMFONY__ENV__FOSUSER_CONFIRMATION=${WALLABAG_FOSUSER_CONFIRMATION}
+    ports:
+      - ${APP_PORT}:8000
+    volumes:
+      - ${APP_DATA_DIR}/data/wallabag/images:/var/www/wallabag/web/assets/images
+    networks:
+      - tipi_main_network
+    healthcheck:
+      test: ["CMD", "wget" ,"--no-verbose", "--tries=1", "--spider", "http://localhost"]
+      interval: 1m
+      timeout: 3s
+    depends_on:
+      - db
+      - redis
+    labels:
+      traefik.enable: ${APP_EXPOSED}
+      traefik.http.routers.hello-world.rule: Host(`${APP_DOMAIN}`)
+      traefik.http.routers.hello-world.entrypoints: websecure
+      traefik.http.routers.hello-world.service: hello-world
+      traefik.http.routers.hello-world.tls.certresolver: myresolver
+      traefik.http.services.hello-world.loadbalancer.server.port: 7575
+    
+  db:
+    image: mariadb
+    environment:
+      - MYSQL_ROOT_PASSWORD=${WALLABAG_DB_PASSWORD_ROOT}
+    volumes:
+      - ${APP_DATA_DIR}/data/wallabag/db:/var/lib/mysql
+    networks:
+      - tipi_main_network
+    healthcheck:
+      test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost"]
+      interval: 20s
+      timeout: 3s
+      
+  redis:
+    image: redis:alpine
+    networks:
+    - tipi_main_network
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 20s
+      timeout: 3s
