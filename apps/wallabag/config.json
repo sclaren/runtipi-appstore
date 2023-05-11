@@ -13,10 +13,10 @@
   ],
   "supported_architectures": [
     "amd64",
-    "arm/v7",
+    "armv7",
     "arm64"
   ],
-  "description": "wallabag is a web application allowing you to save web pages for later reading. Click, save and read it when you want. It extracts content so that you won't be distracted by pop-ups and cie.",
+  "description": "wallabag is a web application allowing you to save web pages for later reading.",
   "short_desc": "wallabag is self hosted read later app",
   "author": "Nicolas Lœuillet",
   "source": "https://github.com/wallabag/wallabag",
@@ -25,14 +25,14 @@
       "type": "text",
       "label": "Instance Name",
       "required": true,
-      "hint": "Give your Wallabag instance a name",
+      "hint": "Give your wallabag instance a name",
       "env_variable": "WALLABAG_INSTANCE_NAME"
     },
     {
       "type": "text",
       "label": "Database Username",
       "required": true,
-      "hint": "Username for the Wallabag Database User",
+      "hint": "Username for the wallabag Database User",
       "env_variable": "WALLABAG_DB_USER"
     },
     {
@@ -40,7 +40,7 @@
       "label": "Database Password",
       "required": true,
       "min": 5,
-      "hint": "Password for the Wallabag Database User",
+      "hint": "Password for the wallabag Database User",
       "env_variable": "WALLABAG_DB_PASSWORD"
     },
     {
@@ -48,7 +48,7 @@
       "label": "Database ROOT Password",
       "required": true,
       "min": 5,
-      "hint": "ROOT Password for the Wallabag Database ROOT User",
+      "hint": "ROOT Password for the wallabag Database ROOT User",
       "env_variable": "WALLABAG_DB_PASSWORD_ROOT"
     },
     {
@@ -60,7 +60,7 @@
     },
     {
       "type": "boolean",
-      "label": "User Confirmation required",
+      "label": "User Confirmation iirequired",
       "required": false,
       "hint": "New users must confirm the creation of their accounts. Needs eMail to be able to send out.",
       "env_variable": "WALLABAG_FOSUSER_CONFIRMATION"
