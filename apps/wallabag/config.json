@@ -13,7 +13,6 @@
   ],
   "supported_architectures": [
     "amd64",
-    "armv7",
     "arm64"
   ],
   "description": "wallabag is a web application allowing you to save web pages for later reading.",
